@@ -1,0 +1,140 @@
+﻿curl.exe :   % Total   
+ % Received % Xferd  
+Average Speed  Time    
+Time    Time   Current
+At line:1 char:1
++ curl.exe -v "https://
+sonus-backend-fpb1.onre
+nder.com/api/health" 
+2>&1 ...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (  % Total       
+ % ... Time   Curre    
+nt:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+                       
+          Dload  
+Upload  Total   Spent  
+ Left   Speed
+
+  0      0   0      0  
+ 0      0      0      
+0                      
+        0* Host sonus-b
+ackend-fpb1.onrender.co
+m:443 was resolved.
+* IPv6: (none)
+* IPv4: 216.24.57.7, 
+216.24.57.251
+*   Trying 
+216.24.57.7:443...
+* schannel: disabled 
+automatic use of 
+client certificate
+* ALPN: curl offers 
+http/1.1
+* ALPN: server 
+accepted http/1.1
+* Established 
+connection to sonus-bac
+kend-fpb1.onrender.com 
+(216.24.57.7 port 443) 
+from 192.168.1.35 port 
+60971 
+* using HTTP/1.x
+> GET /api/health 
+HTTP/1.1
+
+> Host: sonus-backend-f
+pb1.onrender.com
+
+> User-Agent: 
+curl/8.18.0
+
+> Accept: */*
+
+> 
+
+* Request completely 
+sent off
+* schannel: remote 
+party requests 
+renegotiation
+* schannel: 
+renegotiating SSL/TLS 
+connection
+* schannel: SSL/TLS 
+connection renegotiated
+< HTTP/1.1 500 
+Internal Server Error
+
+< Date: Wed, 25 Mar 
+2026 22:14:58 GMT
+
+< Content-Type: 
+application/json; 
+charset=utf-8
+
+< Transfer-Encoding: 
+chunked
+
+< Connection: 
+keep-alive
+
+< CF-RAY: 
+9e214584fade5a0b-DEL
+
+< access-control-allow-
+origin: *
+
+< etag: W/"6a-zJ6nfjY6t
+uKw+Zy7wRPSvD0z2UQ"
+
+< rndr-id: 
+9da7c50c-3366-4960
+
+< vary: Accept-Encoding
+
+< x-powered-by: Express
+
+< x-render-origin-serve
+r: Render
+
+< cf-cache-status: 
+DYNAMIC
+
+< Server: cloudflare
+
+< alt-svc: h3=":443"; 
+ma=86400
+
+< 
+
+{ [117 bytes data]
+
+100    106   0    106  
+ 0      0    278      
+0                      
+        0
+100    106   0    106  
+ 0      0    278      
+0                      
+        0
+100    106   0    106  
+ 0      0    278      
+0                      
+        0
+* Connection #0 to 
+host sonus-backend-fpb1
+.onrender.com:443 left 
+intact
+{"status":"error","details":"Failed to start yt-dlp: spawn yt-dlp ENOENT. Make sure yt-dlp is installed."}
