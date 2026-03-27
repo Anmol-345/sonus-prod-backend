@@ -1,0 +1,25 @@
+# Render Blueprint for YTDJ High-Performance Backend
+services:
+  - type: web
+    name: sonus-backend-unified
+    runtime: node # Use 'node' or 'python' - since you have both, we use node as the primary env
+    plan: free
+    buildCommand: npm install && node scripts/download-ytdlp.js && pip install -r requirements.txt
+    startCommand: chmod +x start.sh && ./start.sh
+    envVars:
+      - key: REDIS_URL
+        fromService:
+          name: sonus-redis
+          type: redis
+          property: connectionString
+      - key: PYTHON_SERVICE_URL
+        value: http://localhost:8000
+      - key: PORT
+        value: 3000
+      - key: COOKIES_FILE_PATH
+        value: /opt/render/project/src/cookies.txt
+
+  - type: redis
+    name: sonus-redis
+    plan: free
+    ipAllowList: [] # Only allow internal traffic
