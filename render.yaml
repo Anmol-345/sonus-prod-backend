@@ -12,6 +12,8 @@ services:
           name: sonus-redis
           type: redis
           property: connectionString
+      - key: PYTHON_PORT
+        value: 8000
       - key: PYTHON_SERVICE_URL
         value: http://localhost:8000
       - key: PORT

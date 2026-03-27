@@ -9,10 +9,14 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const PYTHON_SERVICE_URL = process.env.PYTHON_SERVICE_URL || 'http://localhost:8000';
+const PYTHON_PORT = process.env.PYTHON_PORT || 8000;
+const PYTHON_SERVICE_URL = process.env.PYTHON_SERVICE_URL || `http://localhost:${PYTHON_PORT}`;
 const REDIS_URL = process.env.REDIS_URL || 'redis://localhost:6379';
 
 const redis = new Redis(REDIS_URL);
+redis.on('error', (err) => {
+    console.warn('[Redis] Connection failed. Streaming will still work but without cache persistence.');
+});
 
 const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS
     ? process.env.ALLOWED_ORIGINS.split(',').map(o => o.trim())

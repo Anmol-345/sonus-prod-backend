@@ -75,5 +75,6 @@ async def health():
 
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.getenv("PORT", 8000))
+    # Use a specific variable for Python port to avoid conflict with Node GATEWAY PORT
+    port = int(os.getenv("PYTHON_PORT", 8000))
     uvicorn.run(app, host="0.0.0.0", port=port)
